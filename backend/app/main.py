@@ -22,7 +22,8 @@ app = FastAPI(
 
 # CORS middleware
 # Get allowed origins from environment variable or default to localhost for development
-allowed_origins_str = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:3001")
+allowed_origins_str = os.getenv(
+    "ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:3001")
 allowed_origins = [origin.strip() for origin in allowed_origins_str.split(",")]
 
 app.add_middleware(
@@ -33,14 +34,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize Supabase client
-supabase_url = os.getenv("SUPABASE_URL")
-supabase_key = os.getenv("SUPABASE_KEY")
+# Initialize Supabase client (lazy initialization)
+supabase: Client | None = None
 
-if not supabase_url or not supabase_key:
-    raise ValueError("SUPABASE_URL and SUPABASE_KEY must be set in .env file")
 
-supabase: Client = create_client(supabase_url, supabase_key)
+def get_supabase_client() -> Client:
+    """Get or create Supabase client. Raises error if not configured."""
+    global supabase
+    if supabase is None:
+        supabase_url = os.getenv("SUPABASE_URL")
+        supabase_key = os.getenv("SUPABASE_KEY")
+
+        if not supabase_url or not supabase_key:
+            raise ValueError(
+                "SUPABASE_URL and SUPABASE_KEY must be set in environment variables")
+
+        supabase = create_client(supabase_url, supabase_key)
+    return supabase
 
 
 # Request/Response models
@@ -81,11 +91,14 @@ async def add_to_waitlist(request: WaitlistRequest):
     - Stores in Supabase
     """
     try:
+        # Get Supabase client (will raise error if not configured)
+        db = get_supabase_client()
+
         # Normalize email
         email = request.email.lower().strip()
 
         # Check if email already exists
-        existing = supabase.table("waitlist").select(
+        existing = db.table("waitlist").select(
             "email").eq("email", email).execute()
 
         if existing.data:
@@ -95,7 +108,7 @@ async def add_to_waitlist(request: WaitlistRequest):
             )
 
         # Insert into database
-        result = supabase.table("waitlist").insert({
+        result = db.table("waitlist").insert({
             "email": email,
             "source": request.source,
             "subscribed": True
