@@ -14,7 +14,7 @@ export default function CTASection() {
   const { email, setEmail, status, handleSubmit } = useWaitlistForm();
 
   return (
-    <section id="cta" className="py-20 md:py-32 bg-gradient-to-br from-[#0062B8] via-[#1E88E5] to-[#0062B8] relative overflow-hidden">
+    <section id="cta" className="py-16 sm:py-20 md:py-32 bg-gradient-to-br from-[#0062B8] via-[#1E88E5] to-[#0062B8] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
@@ -36,7 +36,7 @@ export default function CTASection() {
           <AnimatedWrapper animation="fadeIn" delay={0.2} duration={0.6}>
             <TextAnimate
               as="h2"
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
               by="word"
               animation="fadeIn"
               delay={0.3}
@@ -50,7 +50,7 @@ export default function CTASection() {
 
           {/* Subheadline */}
           <AnimatedWrapper animation="slideUp" delay={0.4} duration={0.6}>
-            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 max-w-2xl mx-auto px-4">
               Join thousands of travelers who can't wait to track their flights and preserve their memories with SoFly.
             </p>
           </AnimatedWrapper>

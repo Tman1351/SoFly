@@ -21,7 +21,7 @@ export default function SectionContainer({
   };
 
   return (
-    <div className={`container mx-auto px-4 ${className}`}>
+    <div className={`container mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>
       <div className={`${maxWidthClasses[maxWidth]} mx-auto`}>
         {children}
       </div>

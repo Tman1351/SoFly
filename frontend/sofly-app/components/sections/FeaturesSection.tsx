@@ -17,20 +17,20 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="features" className="py-20 md:py-32 bg-white">
+    <section id="features" className="py-16 sm:py-20 md:py-32 bg-white">
       <SectionContainer>
         <SectionHeader
           title={
             <>
               <AuroraText
-                className="text-3xl md:text-5xl px-2 py-1 inline-block relative md:-bottom-1"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-2 py-1 inline-block relative md:-bottom-1"
                 colors={["#F58529", "#FEDA77", "#DD2A7B", "#8134AF", "#515BD4"]}
               >
                 Instagram
               </AuroraText>
-              <span className="text-3xl md:text-5xl align-middle mr-1">meets</span>
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl align-middle mr-1">meets</span>
               <AuroraText
-                className="text-3xl md:text-5xl px-2 py-1 inline-block align-middle -ml-1"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-2 py-1 inline-block align-middle -ml-1"
                 colors={["#0A1442", "#0D1B5C", "#1A2B7A", "#2441A8", "#2D4FB8"]}
               >
                 Flighty

@@ -18,12 +18,8 @@ export default function Navbar() {
     if (pathname === "/") {
       scrollToSectionUtil(id);
     } else {
-      // If we're on another page, navigate to home and then scroll
+      // If we're on another page, navigate to home with hash
       router.push(`/#${id}`);
-      // Small delay to ensure page loads before scrolling
-      setTimeout(() => {
-        scrollToSectionUtil(id);
-      }, 100);
     }
     setMobileMenuOpen(false);
   };
@@ -32,7 +28,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" aria-label="Go to home page">
+          <Link href="/" aria-label="Go to home page" className="flex items-center">
             <Logo />
           </Link>
 

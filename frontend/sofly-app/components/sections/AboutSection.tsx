@@ -9,7 +9,7 @@ import { Highlighter } from "@/components/ui/highlighter";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 md:py-32 bg-gray-50">
+    <section id="about" className="py-16 sm:py-20 md:py-32 bg-gray-50">
       <SectionContainer>
         <SectionHeader
           title={
@@ -20,7 +20,7 @@ export default function AboutSection() {
           titleClassName="mb-12 pb-4"
           withBorder
         />
-        <div className="max-w-3xl mx-auto space-y-8 text-lg text-gray-700">
+        <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8 text-base sm:text-lg text-gray-700">
           {/* Feature 1 - Main value prop */}
           <AnimatedWrapper animation="slideUp" delay={0.1} duration={0.5}>
             <FeatureItem icon={Plane}>

@@ -47,15 +47,15 @@ export default function SectionHeader({
   );
 
   return (
-    <div className={`${centered ? "text-center" : ""} mb-16 ${className}`}>
-      <h2 className={`text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${titleClassName}`}>
+    <div className={`${centered ? "text-center" : ""} mb-12 sm:mb-16 ${className}`}>
+      <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 ${titleClassName}`}>
         {titleElement}
       </h2>
       {description && (
         typeof description === "string" && animateDescription ? (
           <TextAnimate
             as="p"
-            className={`text-xl text-gray-600 ${centered ? "max-w-2xl mx-auto" : ""} ${descriptionClassName}`}
+            className={`text-lg sm:text-xl text-gray-600 ${centered ? "max-w-2xl mx-auto" : ""} ${descriptionClassName}`}
             by="word"
             animation="fadeIn"
             delay={0.3}
@@ -66,7 +66,7 @@ export default function SectionHeader({
             {description}
           </TextAnimate>
         ) : (
-          <p className={`text-xl text-gray-600 ${centered ? "max-w-2xl mx-auto" : ""} ${descriptionClassName}`}>
+          <p className={`text-lg sm:text-xl text-gray-600 ${centered ? "max-w-2xl mx-auto" : ""} ${descriptionClassName}`}>
             {description}
           </p>
         )

@@ -15,14 +15,14 @@ import AnimatedWrapper from "../AnimatedWrapper";
 export default function HeroSection() {
 
   return (
-    <section id="hero-section" className="relative min-h-screen flex items-center pt-16 bg-white overflow-hidden">
+    <section id="hero-section" className="relative min-h-screen flex items-center pt-16 sm:pt-20 bg-white overflow-hidden">
       <AnimatedParticles className="opacity-40" quantity={20} />
       <div className="w-full flex flex-col lg:flex-row min-h-[calc(100vh-4rem)] relative z-10">
         {/* Left Side - Phone Mockup */}
-        <div className="lg:w-1/2 bg-gradient-to-br from-blue-50 via-blue-100/30 to-indigo-50 flex items-center justify-center p-8 lg:p-16">
+        <div className="lg:w-1/2 bg-gradient-to-br from-blue-50 via-blue-100/30 to-indigo-50 flex items-center justify-center p-4 sm:p-8 lg:p-16">
           <AnimatedWrapper animation="slideRight" delay={0.3} duration={0.8} className="relative w-full flex flex-col items-center">
             {/* Phone Frame - Using Magic UI iPhone */}
-            <div className="relative mx-auto w-[380px] md:w-[420px] flex-shrink-0 transition-transform duration-500 ease-out hover:scale-[1.02] cursor-pointer">
+            <div className="relative mx-auto w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] flex-shrink-0 transition-transform duration-500 ease-out hover:scale-[1.02] cursor-pointer">
               <IphoneWithContent className="w-full z-10">
                 <div className="w-full h-full bg-white overflow-hidden relative flex flex-col">
                   <AppStatusBar />
@@ -139,12 +139,12 @@ export default function HeroSection() {
         </div>
 
         {/* Right Side - Content */}
-        <div className="lg:w-1/2 flex items-center justify-center p-8 lg:p-16 bg-white">
+        <div className="lg:w-1/2 flex items-center justify-center p-4 sm:p-8 lg:p-16 bg-white">
           <div className="max-w-2xl w-full">
             {/* Main Headline - Multi-line */}
             <TextAnimate
               as="h1"
-              className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 mb-6 leading-tight"
               by="word"
               animation="blurInUp"
               delay={0.2}
@@ -157,7 +157,7 @@ export default function HeroSection() {
             {/* Sub-headline */}
             <TextAnimate
               as="p"
-              className="text-2xl md:text-3xl text-gray-600 mb-10"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 sm:mb-10"
               by="word"
               animation="fadeIn"
               delay={0.5}
