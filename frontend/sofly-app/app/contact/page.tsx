@@ -13,7 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Logo from "@/components/Logo";
 import AnimatedWrapper from "@/components/AnimatedWrapper";
 import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/sections/Navbar";

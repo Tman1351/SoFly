@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "../Logo";
@@ -8,9 +10,21 @@ import { scrollToSection as scrollToSectionUtil } from "@/lib/scrollUtils";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const scrollToSection = (id: string) => {
-    scrollToSectionUtil(id);
+    // If we're on the home page, scroll to section
+    if (pathname === "/") {
+      scrollToSectionUtil(id);
+    } else {
+      // If we're on another page, navigate to home and then scroll
+      router.push(`/#${id}`);
+      // Small delay to ensure page loads before scrolling
+      setTimeout(() => {
+        scrollToSectionUtil(id);
+      }, 100);
+    }
     setMobileMenuOpen(false);
   };
 
@@ -18,7 +32,9 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Logo />
+          <Link href="/" aria-label="Go to home page">
+            <Logo />
+          </Link>
 
           {/* Desktop Navigation - Minimal */}
           <div className="hidden md:flex items-center gap-6">
