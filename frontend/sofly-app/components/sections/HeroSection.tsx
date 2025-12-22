@@ -73,18 +73,11 @@ export default function HeroSection() {
                               date: "Today • 5h 30m", 
                               status: "Live" as const, 
                               tracking: "Live",
-                              photoUrls: process.env.NODE_ENV === "development"
-                                ? [
-                                    "https://picsum.photos/seed/jfk-lax-2/200/200",
-                                    "https://picsum.photos/seed/jfk-lax-3/200/200",
-                                    "https://picsum.photos/seed/jfk-lax-4/200/200",
-                                  ]
-                                : [
-                                    // TODO: Replace with actual CDN/S3 image URLs in production
-                                    "/imgs/flight-placeholder-1.jpg",
-                                    "/imgs/flight-placeholder-2.jpg",
-                                    "/imgs/flight-placeholder-3.jpg",
-                                  ],
+                              photoUrls: [
+                                "https://picsum.photos/seed/jfk-lax-2/200/200",
+                                "https://picsum.photos/seed/jfk-lax-3/200/200",
+                                "https://picsum.photos/seed/jfk-lax-4/200/200",
+                              ],
                               isLanding: true
                             },
                             { 
@@ -92,20 +85,12 @@ export default function HeroSection() {
                               arrival: "APC",
                               date: "Feb 18 • 11h 20m", 
                               photos: 8,
-                              photoUrls: process.env.NODE_ENV === "development"
-                                ? [
-                                    "https://picsum.photos/seed/sfo-nrt-1/200/200",
-                                    "https://picsum.photos/seed/sfo-nrt-2/200/200",
-                                    "https://picsum.photos/seed/sfo-nrt-3/200/200",
-                                    "https://picsum.photos/seed/sfo-nrt-4/200/200",
-                                  ]
-                                : [
-                                    // TODO: Replace with actual CDN/S3 image URLs in production
-                                    "/imgs/flight-placeholder-1.jpg",
-                                    "/imgs/flight-placeholder-2.jpg",
-                                    "/imgs/flight-placeholder-3.jpg",
-                                    "/imgs/flight-placeholder-4.jpg",
-                                  ],
+                              photoUrls: [
+                                "https://picsum.photos/seed/sfo-nrt-1/200/200",
+                                "https://picsum.photos/seed/sfo-nrt-2/200/200",
+                                "https://picsum.photos/seed/sfo-nrt-3/200/200",
+                                "https://picsum.photos/seed/sfo-nrt-4/200/200",
+                              ],
                               isLanding: true
                             },
                             { 
@@ -113,16 +98,10 @@ export default function HeroSection() {
                               arrival: "LAX", 
                               date: "Feb 11 • 1h 15m", 
                               photos: 3,
-                              photoUrls: process.env.NODE_ENV === "development"
-                                ? [
-                                    "https://picsum.photos/seed/lax-sfo-1/200/200",
-                                    "https://picsum.photos/seed/lax-sfo-2/200/200",
-                                  ]
-                                : [
-                                    // TODO: Replace with actual CDN/S3 image URLs in production
-                                    "/imgs/flight-placeholder-1.jpg",
-                                    "/imgs/flight-placeholder-2.jpg",
-                                  ],
+                              photoUrls: [
+                                "https://picsum.photos/seed/lax-sfo-1/200/200",
+                                "https://picsum.photos/seed/lax-sfo-2/200/200",
+                              ],
                               isLanding: true
                             },
                           ].map((flight, idx) => (
