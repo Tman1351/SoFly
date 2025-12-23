@@ -50,7 +50,7 @@ export default function HeroSection() {
                       {/* Stats Card with gradient */}
                       <AnimatedWrapper animation="scaleUp" delay={0.4} duration={0.6}>
                         <StatsCard
-                          title="2025 Passport"
+                          title="My 2025 Travel"
                           mainValue="67"
                           mainLabel="flights"
                           stats={[

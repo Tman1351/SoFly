@@ -28,16 +28,15 @@ export default function StatsCard({
           <p className="text-sm text-white/80 font-medium hover:text-white transition-colors">
             {title}
           </p>
-          {onHeaderClick && (
-            <button
-              type="button"
-              onClick={onHeaderClick}
-              className="w-5 h-5 text-white hover:text-white/80 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
-              aria-label="Open external link"
-            >
-              <ExternalLink className="w-5 h-5" aria-hidden="true" />
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={onHeaderClick}
+            className="w-5 h-5 text-white hover:text-white/80 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+            aria-label="Open external link"
+            disabled={!onHeaderClick}
+          >
+            <ExternalLink className="w-5 h-5" aria-hidden="true" />
+          </button>
         </div>
       </CardHeader>
       <CardContent className="p-0">
