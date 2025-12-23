@@ -51,7 +51,7 @@ export default function ContactPage() {
 
       // Prepare form data for Web3Forms
       const formDataToSubmit = new FormData();
-      formDataToSubmit.append("access_key", "56cc95bf-07dc-4456-bfa5-6421efe2d3a4");
+      formDataToSubmit.append("access_key", "64df4353-4c9a-4687-b233-07a9de942c6f");
       formDataToSubmit.append("subject", `Contact Form - ${selectedReason?.label || "General"}`);
       formDataToSubmit.append("to", reasonEmail);
       formDataToSubmit.append("name", formData.name);
