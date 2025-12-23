@@ -49,9 +49,15 @@ export default function ContactPage() {
       const selectedReason = REASON_OPTIONS.find((opt) => opt.value === formData.reason);
       const reasonEmail = selectedReason?.email || "contact@sofly.app";
 
+      // Check access key
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+      if (!accessKey) {
+        throw new Error("Web3Forms access key is not configured. Please check your environment variables.");
+      }
+
       // Prepare form data for Web3Forms
       const formDataToSubmit = new FormData();
-      formDataToSubmit.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
+      formDataToSubmit.append("access_key", accessKey);
       formDataToSubmit.append("subject", `Contact Form - ${selectedReason?.label || "General"}`);
       formDataToSubmit.append("to", reasonEmail);
       formDataToSubmit.append("name", formData.name);
