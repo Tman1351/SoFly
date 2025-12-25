@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import AppStatusBar from "@/components/AppStatusBar";
 import Navbar from "@/components/sections/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
@@ -10,7 +11,7 @@ import Footer from "@/components/sections/Footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { scrollToSection as scrollToSectionUtil } from "@/lib/scrollUtils";
 
-export default function Home() {
+export default function WelcomePage() {
   useEffect(() => {
     // Handle hash-based scrolling on mount
     const hash = window.location.hash;
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
+      <AppStatusBar />
       <ScrollProgress />
       <Navbar />
       <HeroSection />
@@ -36,3 +38,4 @@ export default function Home() {
     </main>
   );
 }
+
